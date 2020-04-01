@@ -1,2 +1,2 @@
-# asp-net-mvc-webpack-integration
-ASP.NET MVC Webpack Integration
+# asp-net-mvc-vue-integration
+ASP.NET MVC Webpack Vue JS Integration
