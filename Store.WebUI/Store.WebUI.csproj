@@ -131,6 +131,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="package.json" />
+    <Content Include="babel.config.js" />
+    <Content Include="Scripts\views\src\store\index.js" />
     <Content Include="Scripts\views\dist\home.index.min.js" />
     <Content Include="Scripts\views\dist\layout.min.js" />
     <Content Include="Scripts\views\src\home\home.index.js" />
@@ -159,6 +161,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Scripts\views\src\home\HomeIndex.vue" />
+    <Content Include="Scripts\views\src\components\HelloWorld.vue" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

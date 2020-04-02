@@ -1,4 +1,5 @@
 ﻿const path = require("path");
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
     entry: {
@@ -14,6 +15,7 @@ module.exports = {
     },
     devtool: 'source-map',
     mode: 'development',
+    watch: true,
     module: {
         rules: [
             { test: /\.css$/, loader: "style-loader!css-loader" },
@@ -22,20 +24,13 @@ module.exports = {
             { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=application/octet-stream" },
             { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml" },
             {
-                loader: "webpack-modernizr-loader",
-                options: {
-                    // Full list of supported options can be found in [config-all.json](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json).
-                    options: ["setClasses"],
-                    "feature-detects": [
-                        "test/css/flexbox",
-                        "test/es6/promises",
-                        "test/serviceworker"
-                    ]
-                    // Uncomment this when you use `JSON` format for configuration
-                    // type: 'javascript/auto'
-                },
-                test: /empty-alias-file\.js$/
+                test: /\.vue$/,
+                loader: 'vue-loader'
             }
         ]
-    }
+    },
+    plugins: [
+        // make sure to include the plugin for the magic
+        new VueLoaderPlugin()
+    ]
 };
